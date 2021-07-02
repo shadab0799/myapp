@@ -1,1 +1,1 @@
-web:waitress-serve --port=$PORTgit ds.wsgi:application
+web: waitress-serve --port=$PORT ds.wsgi:application
