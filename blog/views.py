@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 def bloghome(request):
     allPosts= Post.objects.all()
     context={'allPosts': allPosts}
-    return render(request, "blog/blogHome.html", context)
+    return render(request, "blog/bloghome.html", context)
 
 def blogpost(request, slug):
     post=Post.objects.filter(slug=slug).first()
@@ -22,7 +22,7 @@ def blogpost(request, slug):
             replyDict[reply.parent.sno].append(reply)
 
     context={'post':post, 'comments': comments, 'user': request.user, 'replyDict': replyDict}
-    return render(request, "blog/blogPost.html", context)
+    return render(request, "blog/blogpost.html", context)
 
 
 def postComment(request):
