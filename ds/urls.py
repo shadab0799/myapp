@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('', include('home.urls')),
+    path('ds', views.dshome,name='dshome'),
+    path('job', views.jobhome, name='jobhome'),
+    path('lc', views.lchome, name='lchome'),
+    path('ai', views.aihome, name='aihome'),
+    path('<str:slug>', views.blogpost, name='blogpost'),
+
 ]

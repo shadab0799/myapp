@@ -7,7 +7,9 @@ from django.contrib.auth  import authenticate,  login, logout
 
 
 def home(request):
-    return render(request, "home/home.html")
+    allPosts= Post.objects.all()[:3]
+    context={'allPosts': allPosts}
+    return render(request, "home/home.html", context)
 
 
 def contact(request):

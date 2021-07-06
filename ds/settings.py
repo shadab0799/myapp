@@ -22,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
+#SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 't(=k0!1rhmw8zc8&v0co(u)tgigwow3)s=x$1d70=+gcy#i-+%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["apps-by-shadab.herokuapp.com",'localhost']
+ALLOWED_HOSTS = ["apps-by-shadab.herokuapp.com",'127.0.0.1']
 
 
 # Application definition
@@ -80,12 +81,21 @@ WSGI_APPLICATION = 'ds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+import dj_database_url
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -126,7 +136,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT= BASE_DIR/'static'
+#STATIC_ROOT= BASE_DIR/'static'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,  "static"),

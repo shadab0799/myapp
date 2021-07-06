@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} BlogHome {% endblock title %}
+{% block title %} dsHome {% endblock title %}
 
 
    {% block js %}
@@ -14,12 +14,12 @@
 
 
 
-{% block blogactive %} active {% endblock blogactive %}
+{% block dsactive %} active {% endblock dsactive %}
 
 
 {% block body %}
 <div class="container my-3">
-    <h2>Coding Articles by iCoder</h2>
+    <h2>data structure by shadab</h2>
     {% for post in allPosts  %}
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
@@ -34,7 +34,9 @@
             	<a href="/{{post.slug}}" role="button" class="btn btn-primary">Continue reading</a>
             </div>
         </div>
-
+        <div class="col-auto d-none d-lg-block">
+            <img src=static/main.png" alt="nhi mili" class="img-thumbnail">
+        </div>
     </div>
 
 
