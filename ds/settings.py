@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'ds.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 import dj_database_url
+dbvar=dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(dbvar)
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
