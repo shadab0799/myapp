@@ -93,7 +93,7 @@ DATABASES = {
     }
 }
 import dj_database_url
-dbvar=dj_database_url.config(conn_max_age=600)
+dbvar=dj_database_url.config(conn_max_age=110000)
 DATABASES['default'].update(dbvar)
 
 
