@@ -19,12 +19,14 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
+    #path('blog/', views.bloghome, name='bloghome'),
     path('', include('home.urls')),
-    path('ds', views.dshome,name='dshome'),
-    path('job', views.jobhome, name='jobhome'),
-    path('lc', views.lchome, name='lchome'),
-    path('ai', views.aihome, name='aihome'),
-    path('<str:slug>', views.blogpost, name='blogpost'),
+    path('blog/', include('blog.urls')),
+
+    path('ds/', views.dshome,name='dshome'),
+    path('job/', views.jobhome, name='jobhome'),
+    path('lc/', views.lchome, name='lchome'),
+    path('ai/', views.aihome, name='aihome'),
+    path('<str:slug>/', views.blogpost, name='blogpost'),
 
 ]

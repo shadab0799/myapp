@@ -10,6 +10,26 @@ def bloghome(request):
     context={'allPosts': allPosts}
     return render(request, "blog/bloghome.html", context)
 
+
+
+def dshome(request):
+    allPosts= Post.objects.filter(id=1)
+    context={'allPosts': allPosts}
+    return render(request, "blog/dshome.html", context)
+def jobhome(request):
+    allPosts= Post.objects.filter(id=11)
+    context={'allPosts': allPosts}
+    return render(request, "blog/jobhome.html", context)
+def lchome(request):
+    allPosts= Post.objects.filter(id=2)
+    context={'allPosts': allPosts}
+    return render(request, "blog/lchome.html", context)
+def aihome(request):
+    allPosts= Post.objects.filter(id=3)
+    context={'allPosts': allPosts}
+    return render(request, "blog/aihome.html", context)
+
+
 def blogpost(request, slug):
    if Post.objects.filter(slug=slug).first():
     post=Post.objects.filter(slug=slug).first()
@@ -46,20 +66,3 @@ def postComment(request):
             comment.save()
             messages.success(request, "Your reply has been posted successfully")
         return redirect(f"/{post.slug}")
-
-def dshome(request):
-    allPosts= Post.objects.filter(id=1)
-    context={'allPosts': allPosts}
-    return render(request, "blog/dshome.html", context)
-def jobhome(request):
-    allPosts= Post.objects.filter(id=11)
-    context={'allPosts': allPosts}
-    return render(request, "blog/jobhome.html", context)
-def lchome(request):
-    allPosts= Post.objects.filter(id=2)
-    context={'allPosts': allPosts}
-    return render(request, "blog/lchome.html", context)
-def aihome(request):
-    allPosts= Post.objects.filter(id=3)
-    context={'allPosts': allPosts}
-    return render(request, "blog/aihome.html", context)
