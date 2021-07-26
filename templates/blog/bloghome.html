@@ -27,7 +27,7 @@
             <h3 class="mb-0"><a class="text-dark" href="/blog/{{post.slug}}"{{post.title}} </a> </h3>
             <div class="mb-1 text-muted">{{post.datetime}}</div>
             <p class="card-text mb-auto">
-                <div class="preview">{{post.content|safe| truncatechars:5000}}</div>
+                <div class="preview">{{post.content|safe| truncatechars:100}}</div>
             </p>
 
             <div class="my-2">

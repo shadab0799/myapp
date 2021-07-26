@@ -9,7 +9,7 @@
   <h1 class="display-4">Welcome to tech-update</h1>
   <p class="lead">This is a page where you will get all the latest technology and job updates. </p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p>Read some amazing stuff written by author shadab siddiqui...</p>
   <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
   </div>
 </div>
@@ -19,22 +19,17 @@
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}}</strong>
-            <h3 class="mb-0"><a class="text-dark" href="/blog/{{post.slug}}"{{post.title}} </a> </h3>
+            <h3 class="mb-0"><a class="text-dark" href="/{{post.slug}}"{{post.title}} </a> </h3>
             <div class="mb-1 text-muted">{{post.datetime}}</div>
             <p class="card-text mb-auto">
                 <div class="preview">{{post.content|safe| truncatechars:5000}}</div>
             </p>
 
             <div class="my-2">
-            	<a href="/blog/{{post.slug}}" role="button" class="btn btn-primary">Continue reading</a>
+            	<a href="/{{post.slug}}" role="button" class="btn btn-primary">Continue reading</a>
             </div>
         </div>
-        <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-            </svg>
-        </div>
+
     </div>
 
 
